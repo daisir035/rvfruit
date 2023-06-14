@@ -23,7 +23,7 @@ def get_hls(event, x, y, flags, param):
 
 
 print("点击对应色彩模式的界面，即可得点击位置的像素点在该色彩模式下的值")
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 cv2.namedWindow("BGR")
 cv2.moveWindow("BGR", 10, 0)
 cv2.namedWindow("HSV")

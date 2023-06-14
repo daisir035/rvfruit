@@ -32,7 +32,7 @@ j = 1
 print("\n按n切换种类，按m截取模板，按空格或回车保存，按c取消当前操作，按esc退出")
 print(f"\n当前种类为: {model_mapping(i)}\n")
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 while True:
     ret, img = cap.read()

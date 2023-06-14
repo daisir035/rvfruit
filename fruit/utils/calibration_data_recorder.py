@@ -3,7 +3,7 @@ import cv2
 
 print("请在尽可能多的不同角度对标定板进行拍照\n按空格保存当前帧，按Esc退出")
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 i = 1
 while True:
