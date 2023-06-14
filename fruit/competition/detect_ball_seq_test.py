@@ -279,3 +279,29 @@ def detect_type(cam, mode, time_out=8, time_out_en=False):
     cv2.destroyAllWindows()
     print(f"fruit type detected as: {fruit_mapping(fruit_type)}")
     return fruit_type, similarity
+
+
+
+
+
+# 模拟摄像头捕获
+def simulate_capture():
+    cap = cv2.VideoCapture(0)
+    ret, frame = cap.read()
+    cap.release()
+    return frame
+
+def main():
+    cam = simulate_capture()
+    mode = 0  # 0 for pick up area, 1 for put down area
+    time_out = 8
+    time_out_en = False
+    
+    fruit_type, similarity = detect_type(cam, mode, time_out, time_out_en)
+    print(f"Detected fruit type: {fruit_mapping(fruit_type)}")
+    print("Similarity table:")
+    for i, sim_data in enumerate(similarity, start=1):
+        print(f"Type {i} ({fruit_mapping(i)}): {sim_data}")
+
+if __name__ == "__main__":
+    main()
